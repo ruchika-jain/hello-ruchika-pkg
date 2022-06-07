@@ -31,7 +31,12 @@ jobs:
           rm -rf oras_0.12.0_*.tar.gz oras-install/
           echo "Oras installed!"
           
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@main
+        with:
+          cosign-release: 'v1.8.0' # optional
+          
       - name: Running action   
-        uses: ruchika-jain/package-action@v0.4
+        uses: ruchika-jain/package-action@v0.5
         with:
           milliseconds: 1000
