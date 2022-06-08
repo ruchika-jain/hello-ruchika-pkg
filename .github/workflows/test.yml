@@ -31,8 +31,6 @@ jobs:
       - name: Running action   
         uses: ruchika-jain/package-action@v0.52
         id: publish-action
-        with:
-          package-name: 'dummy-pkg-action'
 
       - name: Signing action
         uses: ruchika-jain/sign-package@v0.44
