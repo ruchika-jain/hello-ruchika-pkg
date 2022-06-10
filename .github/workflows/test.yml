@@ -29,10 +29,12 @@ jobs:
           cosign-release: 'v1.8.0' # optional
           
       - name: Running action   
-        uses: ruchika-jain/package-action@v0.52
+        uses: ruchika-jain/package-action@1.0.1
         id: publish-action
+        with:
+          package-name: 'ghcr-action-pkg'
 
       - name: Signing action
-        uses: ruchika-jain/sign-package@v0.44
+        uses: ruchika-jain/sign-package@1.0.1
         with: 
           package-name: ${{ steps.publish-action.outputs.package-name }}
